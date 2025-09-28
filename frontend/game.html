@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Play — Guess Word Game</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h1>Guess Word Game — Play</h1>
+
+  <div id="controls">
+    <button id="startBtn">Start Game</button>
+    <span id="gameId"></span>
+    <button id="logoutBtn">Logout</button>
+  </div>
+
+  <div id="board"></div>
+
+  <div id="guessControls" style="margin-top:1rem; display:none;">
+    <input id="guessInput" maxlength="5" placeholder="Enter 5-letter guess (A-Z)"/>
+    <button id="submitGuessBtn">Submit Guess</button>
+  </div>
+
+  <script src="/static/script.js"></script>
+  <script>
+    if (!localStorage.getItem("token") || localStorage.getItem("role") !== "player") {
+      window.location.href = "/static/index.html";
+    }
+    document.getElementById("startBtn").addEventListener("click", startGame);
+    document.getElementById("submitGuessBtn").addEventListener("click", submitGuess);
+    document.getElementById("logoutBtn").addEventListener("click", () => { localStorage.clear(); window.location.href="/static/index.html"; });
+  </script>
+</body>
+</html>

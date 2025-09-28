@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Guess Word Game — Login</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h1>Guess Word Game 🎯</h1>
+
+  <div id="auth">
+    <input id="username" placeholder="Username (min 5 letters, upper+lower)"/>
+    <input id="password" type="password" placeholder="Password (min5, letter+digit+$%*@)"/>
+    <button id="registerBtn">Register</button>
+    <button id="loginBtn">Login</button>
+    <p id="msg"></p>
+  </div>
+
+  <script src="/static/script.js"></script>
+  <script>
+    document.getElementById("registerBtn").addEventListener("click", registerUser);
+    document.getElementById("loginBtn").addEventListener("click", loginUser);
+  </script>
+</body>
+</html>
